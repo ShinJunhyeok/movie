@@ -4,12 +4,12 @@ import MovieList from './MovieList';
 import MovieSearch from './MovieSearch';
 import { MovieContainer } from '../../styled/movieStyle';
 import MovieInfo from './MovieInfo';
+import { API_KEY } from '../../assets/api/apikey';
 
 const Movie = () => {
     const [search, setSearch] = useState('a');
     const [isShow, setIsShow] = useState('false');
     const [pop, setPop] = useState({});
-    const API_KEY = '6d000c9f730e9d41db5e46e58aede1cd';
     const { data, loading, error, setData } = useAxios(
         `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&page1&language=ko-KR&query=${search}`
     );
